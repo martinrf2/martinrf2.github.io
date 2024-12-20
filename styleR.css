@@ -1,0 +1,45 @@
+/* Asegura que el cuerpo tenga al menos el 100% de la altura de la ventana */
+body, html {
+    height: 700px;
+    margin: 80px;
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    font-family: "Poppins", sans-serif;
+    background: url(./Fotos/diente-lindo-herramienta-cepillado-ilustracion-vectorial-dibujos-animados-diseno-limpio_1080480-132334.avif); /* Color de fondo suave */
+}
+
+/* La clase wrapper toma el contenido que deseas centrar */
+.wrapper {
+    padding: 25px;
+    background-color: whitesmoke; /* Fondo blanco para el formulario */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega sombra sutil */
+    width: 400px; /* Controla el tamaño del formulario */
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.input-box {
+    margin-bottom: 18px;
+}
+
+/* Asegúrate de que todos los campos de entrada tengan el mismo estilo */
+input[type="text"], input[type="tel"], input[type="date"], input[type="email"] {
+    width: 90%; /* Asegura que todos los campos tengan el mismo ancho */
+    padding: 12px; /* Ajusta el relleno interno para hacer los campos más grandes */
+    margin-top: 5%; /* Ajusta el margen superior si es necesario */
+    border: 1px solid #ccc; /* Borde gris */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 16px; /* Asegura que el texto tenga un tamaño adecuado */
+}
+
+input[type="text"]:focus, input[type="tel"]:focus, input[type="date"]:focus, input[type="email"]:focus {
+    border-color: #4caf50; /* Resalta los campos cuando están enfocados */
+}
+
+form {
+    margin: 0;
+}

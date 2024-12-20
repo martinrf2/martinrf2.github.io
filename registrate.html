@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="styleR.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Regístrate</h1>
+        <form id="registerForm">
+            <div class="input-box">
+                <p>Ingrese su apellido paterno</p>
+                <input type="text" id="apellidoPaterno" placeholder="Apellido Paterno" required>
+            </div>
+
+            <div class="input-box">
+                <p>Ingrese su apellido materno</p>
+                <input type="text" id="apellidoMaterno" placeholder="Apellido Materno" required>
+            </div>
+
+            <div class="input-box">
+                <p>Ingrese su nombre o nombres</p>
+                <input type="text" id="nombres" placeholder="Nombre o nombres" required>
+            </div>
+
+            <div class="input-box">
+                <p>Ingrese su correo electrónico</p>
+                <input type="email" id="email" placeholder="ejemplo123@hotmail.com" required>
+            </div>
+
+            <div class="input-box">
+                <p>Número de teléfono (10 dígitos):</p>
+                <input type="tel" id="telefono" name="telefono" 
+                    pattern="^\d{10}$" maxlength="10" 
+                    placeholder="1234567890" required>
+            </div>
+
+            <div class="input-box">
+                <p>Ingrese su fecha de nacimiento</p>
+                <input type="date" id="fecha" name="fecha" min="1900-01-01" required>
+            </div>
+
+            <script>
+                // Establece la fecha máxima como la fecha actual
+                const fechaActual = new Date();
+                const fechaMaxima = fechaActual.toISOString().split('T')[0];
+                document.getElementById('fecha').setAttribute('max', fechaMaxima);
+
+                // Obtener el botón de envío
+                const submitButton = document.querySelector('button[type="submit"]');
+
+                // Obtener todos los campos de entrada
+                const inputs = document.querySelectorAll('#registerForm input');
+
+                // Función para verificar si todos los campos están completos
+                function checkForm() {
+                    let allFilled = true;
+                    inputs.forEach(input => {
+                        if (!input.value) {
+                            allFilled = false;
+                        }
+                    });
+                    submitButton.disabled = !allFilled;
+                }
+
+                // Verificar el estado del formulario al escribir en los campos
+                inputs.forEach(input => {
+                    input.addEventListener('input', checkForm);
+                });
+
+                // Deshabilitar el botón al principio
+                submitButton.disabled = true;
+            </script>
+
+            <div>
+                <button type="submit" class="btn">Registrarse</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
